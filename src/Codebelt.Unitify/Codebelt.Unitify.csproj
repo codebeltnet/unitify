@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Cuemon.Core" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <Description>The Codebelt.Unitify namespace offers types that simplify unit management with comprehensive metric and binary support for prefixes, multiples, and submultiples.</Description>
+    <PackageTags>power-of-2 power-of-10 binary decimal prefix multiple submultiple unit measurement measure metric si byte bit bit/s ampere becquerel candela celsius coulomb farad gray henry hertz joule kelvin katal gram lumen lux meter mole newton ohm pascal radian second siemens sievert steradian tesla volt watt weber exbi gibi kibi mebi pebi tebi yobi zebi atto centi deca deci exa femto giga hecto kilo mega micro milli nano peta pico ronna ronto quecto quetta tera yocto yotta zepto zetta</PackageTags>
+  </PropertyGroup>
+
+</Project>
