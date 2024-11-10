@@ -1,10 +1,9 @@
 using System;
 using Codebelt.Extensions.Xunit;
-using Codebelt.Unitify;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Unitify
+namespace Codebelt.Unitify
 {
     public class PrefixUnitExtensionsTest : Test
     {

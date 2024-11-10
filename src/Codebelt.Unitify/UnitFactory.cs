@@ -20,7 +20,7 @@ namespace Codebelt.Unitify
         public static IPrefixUnit CreateUnit(string category, string name, string symbol, double value, IPrefix prefix, Action<UnitFormatOptions> setup = null)
         {
             var baseUnit = new BaseUnit(category, name, symbol);
-            return CreateUnit(baseUnit, value, prefix, setup);
+            return CreateUnitCore(baseUnit, value, prefix, setup);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Bit"/>
         public static IPrefixUnit CreateBit(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Bit, value, prefix, setup);
+            return CreateUnitCore(Unit.Bit, value, prefix, setup);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Byte"/>
         public static IPrefixUnit CreateByte(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Byte, value, prefix, setup);
+            return CreateUnitCore(Unit.Byte, value, prefix, setup);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.BitPerSecond"/>
         public static IPrefixUnit CreateBitPerSecond(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.BitPerSecond, value, prefix, setup);
+            return CreateUnitCore(Unit.BitPerSecond, value, prefix, setup);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Ampere"/>
         public static IPrefixUnit CreateAmpere(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Ampere, value, prefix, setup);
+            return CreateUnitCore(Unit.Ampere, value, prefix, setup);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Becquerel"/>
         public static IPrefixUnit CreateBecquerel(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Becquerel, value, prefix, setup);
+            return CreateUnitCore(Unit.Becquerel, value, prefix, setup);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Candela"/>
         public static IPrefixUnit CreateCandela(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Candela, value, prefix, setup);
+            return CreateUnitCore(Unit.Candela, value, prefix, setup);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Celsius"/>
         public static IPrefixUnit CreateCelsius(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Celsius, value, prefix, setup);
+            return CreateUnitCore(Unit.Celsius, value, prefix, setup);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Coulomb"/>
         public static IPrefixUnit CreateCoulomb(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Coulomb, value, prefix, setup);
+            return CreateUnitCore(Unit.Coulomb, value, prefix, setup);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Farad"/>
         public static IPrefixUnit CreateFarad(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Farad, value, prefix, setup);
+            return CreateUnitCore(Unit.Farad, value, prefix, setup);
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Gray"/>
         public static IPrefixUnit CreateGray(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Gray, value, prefix, setup);
+            return CreateUnitCore(Unit.Gray, value, prefix, setup);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Henry"/>
         public static IPrefixUnit CreateHenry(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Henry, value, prefix, setup);
+            return CreateUnitCore(Unit.Henry, value, prefix, setup);
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Hertz"/>
         public static IPrefixUnit CreateHertz(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Hertz, value, prefix, setup);
+            return CreateUnitCore(Unit.Hertz, value, prefix, setup);
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Joule"/>
         public static IPrefixUnit CreateJoule(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Joule, value, prefix, setup);
+            return CreateUnitCore(Unit.Joule, value, prefix, setup);
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Kelvin"/>
         public static IPrefixUnit CreateKelvin(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Kelvin, value, prefix, setup);
+            return CreateUnitCore(Unit.Kelvin, value, prefix, setup);
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Katal"/>
         public static IPrefixUnit CreateKatal(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Katal, value, prefix, setup);
+            return CreateUnitCore(Unit.Katal, value, prefix, setup);
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Gram"/>
         public static IPrefixUnit CreateGram(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Gram, value, prefix, setup);
+            return CreateUnitCore(Unit.Gram, value, prefix, setup);
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="CreateGram"/>
         public static IPrefixUnit CreateKilogram(double value, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Gram, value, DecimalPrefix.Kilo, setup);
+            return CreateUnitCore(Unit.Gram, value, DecimalPrefix.Kilo, setup);
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Lumen"/>
         public static IPrefixUnit CreateLumen(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Lumen, value, prefix, setup);
+            return CreateUnitCore(Unit.Lumen, value, prefix, setup);
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Lux"/>
         public static IPrefixUnit CreateLux(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Lux, value, prefix, setup);
+            return CreateUnitCore(Unit.Lux, value, prefix, setup);
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Meter"/>
         public static IPrefixUnit CreateMeter(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Meter, value, prefix, setup);
+            return CreateUnitCore(Unit.Meter, value, prefix, setup);
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Mole"/>
         public static IPrefixUnit CreateMole(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Mole, value, prefix, setup);
+            return CreateUnitCore(Unit.Mole, value, prefix, setup);
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Newton"/>
         public static IPrefixUnit CreateNewton(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Newton, value, prefix, setup);
+            return CreateUnitCore(Unit.Newton, value, prefix, setup);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Ohm"/>
         public static IPrefixUnit CreateOhm(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Ohm, value, prefix, setup);
+            return CreateUnitCore(Unit.Ohm, value, prefix, setup);
         }
 
         /// <summary>
@@ -332,7 +332,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Pascal"/>
         public static IPrefixUnit CreatePascal(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Pascal, value, prefix, setup);
+            return CreateUnitCore(Unit.Pascal, value, prefix, setup);
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Radian"/>
         public static IPrefixUnit CreateRadian(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Radian, value, prefix, setup);
+            return CreateUnitCore(Unit.Radian, value, prefix, setup);
         }
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Second"/>
         public static IPrefixUnit CreateSecond(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Second, value, prefix, setup);
+            return CreateUnitCore(Unit.Second, value, prefix, setup);
         }
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Siemens"/>
         public static IPrefixUnit CreateSiemens(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Siemens, value, prefix, setup);
+            return CreateUnitCore(Unit.Siemens, value, prefix, setup);
         }
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Sievert"/>
         public static IPrefixUnit CreateSievert(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Sievert, value, prefix, setup);
+            return CreateUnitCore(Unit.Sievert, value, prefix, setup);
         }
 
         /// <summary>
@@ -397,7 +397,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Steradian"/>
         public static IPrefixUnit CreateSteradian(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Steradian, value, prefix, setup);
+            return CreateUnitCore(Unit.Steradian, value, prefix, setup);
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Tesla"/>
         public static IPrefixUnit CreateTesla(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Tesla, value, prefix, setup);
+            return CreateUnitCore(Unit.Tesla, value, prefix, setup);
         }
 
         /// <summary>
@@ -423,7 +423,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Volt"/>
         public static IPrefixUnit CreateVolt(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Volt, value, prefix, setup);
+            return CreateUnitCore(Unit.Volt, value, prefix, setup);
         }
 
         /// <summary>
@@ -436,7 +436,7 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Watt"/>
         public static IPrefixUnit CreateWatt(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Watt, value, prefix, setup);
+            return CreateUnitCore(Unit.Watt, value, prefix, setup);
         }
 
         /// <summary>
@@ -449,10 +449,10 @@ namespace Codebelt.Unitify
         /// <seealso cref="Unit.Weber"/>
         public static IPrefixUnit CreateWeber(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
-            return CreateUnit(Unit.Weber, value, prefix, setup);
+            return CreateUnitCore(Unit.Weber, value, prefix, setup);
         }
 
-        private static PrefixUnit CreateUnit(IBaseUnit baseUnit, double value, IPrefix prefix, Action<UnitFormatOptions> setup)
+        private static PrefixUnit CreateUnitCore(IBaseUnit baseUnit, double value, IPrefix prefix, Action<UnitFormatOptions> setup)
         {
             return prefix == null
                 ? new PrefixUnit(baseUnit, value, setup: setup)

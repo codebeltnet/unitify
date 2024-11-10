@@ -5,7 +5,6 @@ namespace Codebelt.Unitify
     /// <summary>
     /// Defines a unit of measure that is used as a standard for measurement of the same kind of quantity.
     /// </summary>
-    /// <seealso cref="IEquatable{IUnit}" />
     public interface IUnit : IBaseUnit
     {
         /// <summary>
