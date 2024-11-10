@@ -14,7 +14,7 @@ namespace Unitify
         [Fact]
         public void CreateCustomUnit_ShouldReturnCorrectUnit()
         {
-            var unit = UnitFactory.Create("Custom Category", "Custom Name", "CN", 100, null);
+            var unit = UnitFactory.CreateUnit("Custom Category", "Custom Name", "CN", 100, null);
 
             Assert.Equal("Custom Category", unit.Category);
             Assert.Equal("Custom Name", unit.Name);

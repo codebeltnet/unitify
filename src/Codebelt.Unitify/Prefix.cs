@@ -61,13 +61,13 @@ namespace Codebelt.Unitify
         public double Exponent { get; }
 
         /// <summary>
-        /// Converts the unit base <paramref name="value"/> to a unit prefix value.
+        /// Converts the unit base <paramref name="baseValue"/> to a unit prefix value.
         /// </summary>
-        /// <param name="value">The value of the base unit.</param>
+        /// <param name="baseValue">The value of the base unit.</param>
         /// <returns>A <see cref="double"/> that represents a unit prefix value.</returns>
-        public double ToPrefixValue(double value)
+        public double ToPrefixValue(double baseValue)
         {
-            return value / Multiplier;
+            return baseValue / Multiplier;
         }
 
         /// <summary>

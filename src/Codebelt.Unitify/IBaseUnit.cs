@@ -1,7 +1,7 @@
 ﻿namespace Codebelt.Unitify
 {
     /// <summary>
-    /// Represents a base unit of measure, including its category, name, and symbol.
+    /// Defines a base unit of measure, including its category, name, and symbol.
     /// </summary>
     public interface IBaseUnit
     {

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Cuemon.Core" Version="9.0.0-preview.12" />
+    <PackageReference Include="Cuemon.Core" />
   </ItemGroup>
 
   <PropertyGroup>

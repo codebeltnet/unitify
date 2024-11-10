@@ -87,10 +87,10 @@ namespace Codebelt.Unitify
         {
             return DecimalPrefix.MetricPrefixes
                 .Where(p => p.Exponent is >= 3 and <= 15)
-                .Select(p => p.ApplyUnit(BaseUnit))
+                .Select(p => p.ToPrefixUnit(BaseUnit))
                 .Concat(BinaryPrefix.BinaryPrefixes
                     .Where(p => p.Exponent is >= 10 and <= 50)
-                    .Select(p => p.ApplyUnit(BaseUnit)))
+                    .Select(p => p.ToPrefixUnit(BaseUnit)))
                 .OrderBy(p => p.Value)
                 .GetEnumerator();
         }

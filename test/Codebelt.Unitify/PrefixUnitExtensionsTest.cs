@@ -20,7 +20,7 @@ namespace Unitify
             public double Base { get; set; }
             public double Exponent { get; set; }
 
-            public double ToPrefixValue(double value) => value * Multiplier;
+            public double ToPrefixValue(double baseValue) => baseValue * Multiplier;
             public double ToBaseValue(double prefixValue) => prefixValue / Multiplier;
         }
 

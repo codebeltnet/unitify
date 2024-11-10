@@ -3,7 +3,7 @@
 namespace Codebelt.Unitify
 {
     /// <summary>
-    /// Provides a set of static methods for generating different types of unit of measure or the option to define your own with <see cref="Create"/>.
+    /// Provides a set of static methods for generating different types of unit of measure and the option to define your own with <see cref="CreateUnit"/>.
     /// </summary>
     public static class UnitFactory
     {
@@ -17,7 +17,7 @@ namespace Codebelt.Unitify
         /// <param name="prefix">The prefix of the unit.</param>
         /// <param name="setup">The <see cref="UnitFormatOptions"/> which may be configured.</param>
         /// <returns>A custom unit of measure.</returns>
-        public static IPrefixUnit Create(string category, string name, string symbol, double value, IPrefix prefix, Action<UnitFormatOptions> setup = null)
+        public static IPrefixUnit CreateUnit(string category, string name, string symbol, double value, IPrefix prefix, Action<UnitFormatOptions> setup = null)
         {
             var baseUnit = new BaseUnit(category, name, symbol);
             return CreateUnit(baseUnit, value, prefix, setup);
@@ -200,7 +200,7 @@ namespace Codebelt.Unitify
         /// <param name="setup">The <see cref="UnitFormatOptions"/> which may be configured.</param>
         /// <returns>A unit of measure for Temperature in kelvin.</returns>
         /// <seealso cref="Unit.Kelvin"/>
-        public static IUnit CreateKelvin(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
+        public static IPrefixUnit CreateKelvin(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
             return CreateUnit(Unit.Kelvin, value, prefix, setup);
         }
@@ -213,7 +213,7 @@ namespace Codebelt.Unitify
         /// <param name="setup">The <see cref="UnitFormatOptions"/> which may be configured.</param>
         /// <returns>A unit of measure for Catalytic Activity in katals.</returns>
         /// <seealso cref="Unit.Katal"/>
-        public static IUnit CreateKatal(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
+        public static IPrefixUnit CreateKatal(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
             return CreateUnit(Unit.Katal, value, prefix, setup);
         }
@@ -226,7 +226,7 @@ namespace Codebelt.Unitify
         /// <param name="setup">The <see cref="UnitFormatOptions"/> which may be configured.</param>
         /// <returns>A unit of measure for Mass in grams.</returns>
         /// <seealso cref="Unit.Gram"/>
-        public static IUnit CreateGram(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
+        public static IPrefixUnit CreateGram(double value, IPrefix prefix = null, Action<UnitFormatOptions> setup = null)
         {
             return CreateUnit(Unit.Gram, value, prefix, setup);
         }
@@ -452,7 +452,7 @@ namespace Codebelt.Unitify
             return CreateUnit(Unit.Weber, value, prefix, setup);
         }
 
-        private static PrefixUnit CreateUnit(IBaseUnit baseUnit, double value, IPrefix prefix, Action<UnitFormatOptions> setup = null)
+        private static PrefixUnit CreateUnit(IBaseUnit baseUnit, double value, IPrefix prefix, Action<UnitFormatOptions> setup)
         {
             return prefix == null
                 ? new PrefixUnit(baseUnit, value, setup: setup)

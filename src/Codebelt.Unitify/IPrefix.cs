@@ -1,7 +1,7 @@
 ﻿namespace Codebelt.Unitify
 {
     /// <summary>
-    /// Defines a unit prefix that can can be expressed as a either a multiple or a submultiple of the unit of measurement.
+    /// Defines a unit prefix that can can be expressed as either a multiple or a submultiple of the unit of measurement.
     /// </summary>
     /// <seealso cref="Prefix"/>
     public interface IPrefix
@@ -37,11 +37,11 @@
         double Exponent { get; }
 
         /// <summary>
-        /// Converts the unit base <paramref name="value"/> to a unit prefix value.
+        /// Converts the unit base <paramref name="baseValue"/> to a unit prefix value.
         /// </summary>
-        /// <param name="value">The value of the base unit.</param>
+        /// <param name="baseValue">The value of the base unit.</param>
         /// <returns>A <see cref="double"/> that represents a unit prefix value.</returns>
-        double ToPrefixValue(double value);
+        double ToPrefixValue(double baseValue);
 
         /// <summary>
         /// Converts the <paramref name="prefixValue"/> back to a unit base value.

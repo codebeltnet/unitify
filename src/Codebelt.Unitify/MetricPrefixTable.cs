@@ -5,7 +5,7 @@ using System.Text;
 namespace Codebelt.Unitify
 {
     /// <summary>
-    /// Represents a table of metric unit prefixes, indicating multiples and submultiples of a base unit.
+    /// Represents a table of metric prefixes for units of measure, optimized for metric measurement standards.
     /// </summary>
     public class MetricPrefixTable : PrefixTable
     {
@@ -24,7 +24,7 @@ namespace Codebelt.Unitify
         public override IEnumerator<IPrefixUnit> GetEnumerator()
         {
             return DecimalPrefix.MetricPrefixes
-                .Select(p => p.ApplyUnit(BaseUnit))
+                .Select(p => p.ToPrefixUnit(BaseUnit))
                 .OrderBy(p => p.Value)
                 .GetEnumerator();
         }
