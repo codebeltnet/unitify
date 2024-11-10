@@ -1,27 +1,22 @@
-![ClassLibrary1](.nuget/ClassLibrary1/icon.png)
+![Unitify by Codebelt](.nuget/icon.png)
 
-# Repository template for .NET class library projects
+# Unitify API by Codebelt
 
-Template repository for .NET class library projects following [Microsoft Engineering Guidelines](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines) as well as Conventions, Idioms and Patterns by [Codebelt](https://github.com/codebeltnet#conventions-idioms-and-patterns).
+[![Unitify CI/CD Pipeline](https://github.com/codebeltnet/unitify/actions/workflows/pipelines.yml/badge.svg)](https://github.com/codebeltnet/unitify/actions/workflows/pipelines.yml) [![codecov](https://codecov.io/gh/codebeltnet/unitify/graph/badge.svg?token=WAmfmpQyCz)](https://codecov.io/gh/codebeltnet/unitify) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=unitify&metric=alert_status)](https://sonarcloud.io/dashboard?id=unitify) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=unitify&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=unitify) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=unitify&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=unitify) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=unitify&metric=security_rating)](https://sonarcloud.io/dashboard?id=unitify)
+
+An open-source project (MIT license) that offers types that simplify unit management with comprehensive metric and binary support for prefixes, multiples, and submultiples.
 
 ## 📦 Standalone Packages
 
-Provides a focused API for ...
+Provides a focused API for working with units of measure including, but not limited to, prefixes, multiples, and submultiples.
 
 |Package|vNext|Stable|Downloads|
 |:--|:-:|:-:|:-:|
-| [ClassLibrary1](https://www.nuget.org/packages/ClassLibrary1/) | ![vNext](https://img.shields.io/nuget/vpre/ClassLibrary1?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/ClassLibrary1?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/ClassLibrary1?color=blueviolet&logo=nuget) |
+| [Codebelt.Unitify](https://www.nuget.org/packages/Codebelt.Unitify/) | ![vNext](https://img.shields.io/nuget/vpre/Codebelt.Unitify?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/Codebelt.Unitify?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/Codebelt.Unitify?color=blueviolet&logo=nuget) |
 
-## 🏭 Productivity Packages
+### Contributing to `Unitify API by Codebelt`
+[Contributions](.github/CONTRIBUTING.md) are welcome and appreciated.
 
-Provides a convenient set of default API additions for ...
-
-|Package|vNext|Stable|Downloads|
-|:--|:-:|:-:|:-:|
-| [ClassLibrary1.App](https://www.nuget.org/packages/ClassLibrary1.App/) | ![vNext](https://img.shields.io/nuget/vpre/ClassLibrary1.App?logo=nuget) | ![Stable](https://img.shields.io/nuget/v/ClassLibrary1.App?logo=nuget) | ![Downloads](https://img.shields.io/nuget/dt/ClassLibrary1.App?color=blueviolet&logo=nuget) |
-
-### Contributing to `Extensions for xUnit API by Codebelt`
-Contributions are welcome! 
 Feel free to submit issues, feature requests, or pull requests to help improve this library.
 
 ### License
