@@ -5,6 +5,7 @@ on:
     paths-ignore:
       - .codecov/**
       - .docfx/**
+      - .github/**
       - .nuget/**
       - '**/*.md'
   workflow_dispatch:
