@@ -7,6 +7,10 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [9.0.1] - 2025-01-31
+
+This is a service update that primarily focuses on package dependencies and minor improvements.
+
 ## [9.0.0] - 2024-11-13
 
 ### Added
