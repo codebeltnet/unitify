@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Codebelt.Unitify/Codebelt.Unitify.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Codebelt.Unitify/Codebelt.Unitify.Tests.csproj" />
+  </Folder>
+</Solution>
