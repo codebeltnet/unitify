@@ -7,6 +7,18 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [10.0.5] - 2026-03-25
+
+This is a patch release focusing on dependency upgrades across all supported target frameworks, modernization of build tooling, updates to documentation infrastructure, and expanded package management coverage.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded from 11.0.7 to 11.0.8 for unit test support,
+- Cuemon.Core upgraded from 10.4.0 to 10.5.0 with latest improvements across all supported target frameworks (.NET 10 and .NET 9),
+- docfx base image updated from 2.78.4 to 2.78.5 for improved documentation generation,
+- Service update workflow improved with clarified formatting and consistency standards,
+- NuGet package update detection extended to include Carter package mapping for Codebelt.Extensions.Carter.
+
 ## [10.0.4] - 2026-02-28
 
 This is a service update that focuses on package dependencies.
@@ -125,3 +137,21 @@ This is a service update that primarily focuses on package dependencies and mino
 - BitUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
+
+[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.5...HEAD
+[10.0.5]: https://github.com/codebeltnet/unitify/compare/v10.0.4...v10.0.5
+[10.0.4]: https://github.com/codebeltnet/unitify/compare/v10.0.3...v10.0.4
+[10.0.3]: https://github.com/codebeltnet/unitify/compare/v10.0.2...v10.0.3
+[10.0.2]: https://github.com/codebeltnet/unitify/compare/v10.0.1...v10.0.2
+[10.0.1]: https://github.com/codebeltnet/unitify/compare/v10.0.0...v10.0.1
+[10.0.0]: https://github.com/codebeltnet/unitify/compare/v9.0.8...v10.0.0
+[9.0.8]: https://github.com/codebeltnet/unitify/compare/v9.0.7...v9.0.8
+[9.0.7]: https://github.com/codebeltnet/unitify/compare/v9.0.6...v9.0.7
+[9.0.6]: https://github.com/codebeltnet/unitify/compare/v9.0.5...v9.0.6
+[9.0.5]: https://github.com/codebeltnet/unitify/compare/v9.0.4...v9.0.5
+[9.0.4]: https://github.com/codebeltnet/unitify/compare/v9.0.3...v9.0.4
+[9.0.3]: https://github.com/codebeltnet/unitify/compare/v9.0.2...v9.0.3
+[9.0.2]: https://github.com/codebeltnet/unitify/compare/v9.0.1...v9.0.2
+[9.0.1]: https://github.com/codebeltnet/unitify/compare/v9.0.0...v9.0.1
+[9.0.0]: https://github.com/codebeltnet/unitify/releases/tag/v9.0.0
+[6.0.0]: https://github.com/codebeltnet/unitify/releases/tag/v6.0.0
