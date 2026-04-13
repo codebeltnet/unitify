@@ -317,7 +317,7 @@ namespace Codebelt.Unitify
             return prefixes.SingleOrDefault(p => p.Prefix.Symbol == BinaryPrefix.Zebi.Symbol);
         }
 
-        >        /// <summary>
+>        /// <summary>
         /// Returns the unit with the Yobi prefix or the default value if not found.
         /// </summary>
         /// <param name="prefixes">The table of multiple units.</param>

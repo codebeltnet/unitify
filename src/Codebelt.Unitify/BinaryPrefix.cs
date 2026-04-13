@@ -49,16 +49,16 @@ namespace Codebelt.Unitify
         {
             var list = new List<BinaryPrefix>()
             {
-                Exbi,
-                Gibi,
                 Kibi,
                 Mebi,
-                Pebi,
-                Robi,
+                Gibi,
                 Tebi,
-                Quebi,
+                Pebi,
+                Exbi,
+                Zebi,
                 Yobi,
-                Zebi
+                Robi,
+                Quebi
             };
             return list;
         });
