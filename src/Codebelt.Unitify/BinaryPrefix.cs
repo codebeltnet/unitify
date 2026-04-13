@@ -54,7 +54,9 @@ namespace Codebelt.Unitify
                 Kibi,
                 Mebi,
                 Pebi,
+                Robi,
                 Tebi,
+                Quebi,
                 Yobi,
                 Zebi
             };
@@ -104,10 +106,16 @@ namespace Codebelt.Unitify
         public static BinaryPrefix Zebi => new("zebi", "Zi", 70);
 
         /// <summary>
-        /// Gets the binary-multiple prefix yobi (symbol 'Yi'), 2^80 = 1208925819614629174706176.
+        /// Gets the binary-multiple prefix robi (symbol 'Ri'), 2^90 = 1237940039285380274899124224.
         /// </summary>
-        /// <value>The binary-multiple prefix yobi (symbol 'Yi').</value>
-        public static BinaryPrefix Yobi => new("yobi", "Yi", 80);
+        /// <value>The binary-multiple prefix robi (symbol 'Ri').</value>
+        public static BinaryPrefix Robi => new("robi", "Ri", 90);
+
+        /// <summary>
+        /// Gets the binary-multiple prefix quebi (symbol 'Qi'), 2^100 = 1267650600228229401496703205376.
+        /// </summary>
+        /// <value>The binary-multiple prefix quebi (symbol 'Qi').</value>
+        public static BinaryPrefix Quebi => new("quebi", "Qi", 100);
 
         /// <summary>
         /// Gets the complete sequence of multiples binary prefixes as specified by Institute of Electrical and Electronics Engineers (IEEE).

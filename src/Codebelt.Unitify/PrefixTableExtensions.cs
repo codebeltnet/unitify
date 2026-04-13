@@ -317,7 +317,7 @@ namespace Codebelt.Unitify
             return prefixes.SingleOrDefault(p => p.Prefix.Symbol == BinaryPrefix.Zebi.Symbol);
         }
 
-        /// <summary>
+        >        /// <summary>
         /// Returns the unit with the Yobi prefix or the default value if not found.
         /// </summary>
         /// <param name="prefixes">The table of multiple units.</param>
@@ -325,6 +325,26 @@ namespace Codebelt.Unitify
         public static IPrefixUnit YobiOrDefault(this PrefixTable prefixes)
         {
             return prefixes.SingleOrDefault(p => p.Prefix.Symbol == BinaryPrefix.Yobi.Symbol);
+        }
+
+        /// <summary>
+        /// Returns the unit with the Robi prefix or the default value if not found.
+        /// </summary>
+        /// <param name="prefixes">The table of multiple units.</param>
+        /// <returns>The unit with the Robi prefix or the default value.</returns>
+        public static IPrefixUnit RobiOrDefault(this PrefixTable prefixes)
+        {
+            return prefixes.SingleOrDefault(p => p.Prefix.Symbol == BinaryPrefix.Robi.Symbol);
+        }
+
+        /// <summary>
+        /// Returns the unit with the Quebi prefix or the default value if not found.
+        /// </summary>
+        /// <param name="prefixes">The table of multiple units.</param>
+        /// <returns>The unit with the Quebi prefix or the default value.</returns>
+        public static IPrefixUnit QuebiOrDefault(this PrefixTable prefixes)
+        {
+            return prefixes.SingleOrDefault(p => p.Prefix.Symbol == BinaryPrefix.Quebi.Symbol);
         }
     }
 }

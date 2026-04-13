@@ -21,6 +21,8 @@ namespace Codebelt.Unitify
             Assert.Equal(BinaryPrefix.Exbi.Multiplier, Math.Pow(2, 60));
             Assert.Equal(BinaryPrefix.Zebi.Multiplier, Math.Pow(2, 70));
             Assert.Equal(BinaryPrefix.Yobi.Multiplier, Math.Pow(2, 80));
+            Assert.Equal(BinaryPrefix.Robi.Multiplier, Math.Pow(2, 90));
+            Assert.Equal(BinaryPrefix.Quebi.Multiplier, Math.Pow(2, 100));
         }
     }
 }
