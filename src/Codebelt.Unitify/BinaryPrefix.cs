@@ -106,6 +106,12 @@ namespace Codebelt.Unitify
         public static BinaryPrefix Zebi => new("zebi", "Zi", 70);
 
         /// <summary>
+        /// Gets the binary-multiple prefix yobi (symbol 'Yi'), 2^80 = 1208925819614629174706176.
+        /// </summary>
+        /// <value>The binary-multiple prefix yobi (symbol 'Yi').</value>
+        public static BinaryPrefix Yobi => new("yobi", "Yi", 80);
+
+        /// <summary>
         /// Gets the binary-multiple prefix robi (symbol 'Ri'), 2^90 = 1237940039285380274899124224.
         /// </summary>
         /// <value>The binary-multiple prefix robi (symbol 'Ri').</value>
@@ -118,9 +124,9 @@ namespace Codebelt.Unitify
         public static BinaryPrefix Quebi => new("quebi", "Qi", 100);
 
         /// <summary>
-        /// Gets the complete sequence of multiples binary prefixes as specified by Institute of Electrical and Electronics Engineers (IEEE).
+        /// Gets the complete sequence of multiples binary prefixes as specified by IEC 80000-13:2025, covering kibi (2^10) through quebi (2^100).
         /// </summary>
-        /// <value>The complete sequence of multiples binary prefixes as specified by Institute of Electrical and Electronics Engineers (IEEE).</value>
+        /// <value>The complete sequence of multiples binary prefixes as specified by IEC 80000-13:2025.</value>
         public static IEnumerable<BinaryPrefix> BinaryPrefixes => LazyPrefixes.Value;
 
         /// <summary>
