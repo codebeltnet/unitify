@@ -87,5 +87,48 @@ namespace Codebelt.Unitify
 
             Assert.Throws<ArgumentOutOfRangeException>(() => unit.ToPrefixString());
         }
+
+        [Fact]
+        public void ToPrefixString_ShouldConvertToBinaryPrefixString()
+        {
+            var unit = UnitFactory.CreateByte(1, BinaryPrefix.Gibi);
+            var result = unit.ToPrefixString();
+
+            TestOutput.WriteLine(result);
+            Assert.NotNull(result);
+            Assert.Contains("GiB", result);
+        }
+
+        [Fact]
+        public void ToPrefixString_ShouldReturnUnitToString_WhenPrefixBaseIsZero()
+        {
+            var prefix = new TestPrefix { Base = 0 };
+            var unit = new TestPrefixUnit { Value = 42, Prefix = prefix, Symbol = "m", FormatOptions = new UnitFormatOptions() };
+
+            var result = unit.ToPrefixString();
+
+            TestOutput.WriteLine(result);
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void ToMetricPrefixTable_ShouldReturnMetricPrefixTable()
+        {
+            var unit = UnitFactory.CreateWatt(1000);
+            var result = unit.ToMetricPrefixTable();
+
+            Assert.NotNull(result);
+            Assert.IsType<MetricPrefixTable>(result);
+        }
+
+        [Fact]
+        public void ToDataPrefixTable_ShouldReturnDataPrefixTable()
+        {
+            var unit = UnitFactory.CreateByte(1024);
+            var result = unit.ToDataPrefixTable();
+
+            Assert.NotNull(result);
+            Assert.IsType<DataPrefixTable>(result);
+        }
     }
 }

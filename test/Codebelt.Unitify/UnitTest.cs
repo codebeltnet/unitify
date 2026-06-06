@@ -335,6 +335,67 @@ namespace Codebelt.Unitify
             Assert.Equal("Wb", Unit.Weber.Symbol);
         }
 
+        [Fact]
+        public void Equals_Object_ShouldReturnFalseForNonIUnit()
+        {
+            var baseUnit = new BaseUnit("Test Category", "Test Name", "T");
+            var unit = new TestUnit(baseUnit, 123.45);
+
+            Assert.False(unit.Equals("not a unit"));
+            Assert.False(unit.Equals(42));
+            Assert.False(unit.Equals(null));
+        }
+
+        [Fact]
+        public void Equals_IUnit_ShouldReturnFalseWhenCategoryDiffers()
+        {
+            var baseUnit1 = new BaseUnit("Category A", "Name", "S");
+            var baseUnit2 = new BaseUnit("Category B", "Name", "S");
+            var unit1 = new TestUnit(baseUnit1, 100);
+            var unit2 = new TestUnit(baseUnit2, 100);
+
+            Assert.False(unit1.Equals((IUnit)unit2));
+        }
+
+        [Fact]
+        public void Equals_IUnit_ShouldReturnFalseWhenNameDiffers()
+        {
+            var baseUnit1 = new BaseUnit("Category", "Name A", "S");
+            var baseUnit2 = new BaseUnit("Category", "Name B", "S");
+            var unit1 = new TestUnit(baseUnit1, 100);
+            var unit2 = new TestUnit(baseUnit2, 100);
+
+            Assert.False(unit1.Equals((IUnit)unit2));
+        }
+
+        [Fact]
+        public void Equals_IUnit_ShouldReturnFalseWhenSymbolDiffers()
+        {
+            var baseUnit1 = new BaseUnit("Category", "Name", "S1");
+            var baseUnit2 = new BaseUnit("Category", "Name", "S2");
+            var unit1 = new TestUnit(baseUnit1, 100);
+            var unit2 = new TestUnit(baseUnit2, 100);
+
+            Assert.False(unit1.Equals((IUnit)unit2));
+        }
+
+        [Fact]
+        public void ToString_ShouldReturnCompoundFormattedString()
+        {
+            var baseUnit = new BaseUnit("Test Category", "Test Name", "T");
+            var unit = new TestUnit(baseUnit, 42, options =>
+            {
+                options.Style = NamingStyle.Compound;
+                options.NumberFormat = "0";
+            });
+
+            var result = unit.ToString();
+
+            TestOutput.WriteLine(result);
+            Assert.Contains("Test Name", result);
+            Assert.Contains("42", result);
+        }
+
         private class TestUnit : Unit
         {
             public TestUnit(IBaseUnit baseUnit, double value, Action<UnitFormatOptions> setup = null)
