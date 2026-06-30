@@ -7,6 +7,28 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [10.0.9] - 2026-06-30
+
+This is a patch release focused on comprehensive API documentation, test infrastructure updates, and continuous integration improvements.
+
+### Added
+
+- Complete DocFX API documentation for all public types in the Codebelt.Unitify namespace with per-type overwrite files covering examples and usage guidance,
+- Namespace overview documentation for Codebelt.Unitify providing Start Here, When to Use, and Getting Started sections with practical guidance on unit creation, prefix application, and metric vs binary prefix table usage,
+- Comprehensive DocFX documentation maintenance guidelines in AGENTS.md covering API documentation requirements, namespace and type page guidelines, example validation, link preservation, availability documentation, and final verification procedures for code sample compilation and DocFX build validation.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded from 11.1.0 to 11.1.1 for enhanced unit test infrastructure support,
+- Cuemon.Core upgraded from 10.5.3 to 10.5.4 with latest improvements across all supported target frameworks,
+- Documentation infrastructure updated with Dockerfile.docfx nginx image upgraded to 1.31.2 and docfx.json restructured to separate namespace and type API documentation into distinct subdirectories,
+- Continuous integration deployment condition refactored to explicitly check all required job results, preventing skipped optional jobs from suppressing deployment,
+- Microsoft.NET.Test.SDK upgraded from 18.6.0 to 18.7.0 for improved test runner compatibility and latest test infrastructure improvements.
+
+### Fixed
+
+- CI/CD deployment workflow now correctly respects all job results using always() condition check instead of only preventing pull request deployments.
+
 ## [10.0.8] - 2026-06-05
 
 This is a service update that focuses on package dependencies.
@@ -150,7 +172,11 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
-[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.5...HEAD
+[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.9...HEAD
+[10.0.9]: https://github.com/codebeltnet/unitify/compare/v10.0.8...v10.0.9
+[10.0.8]: https://github.com/codebeltnet/unitify/compare/v10.0.7...v10.0.8
+[10.0.7]: https://github.com/codebeltnet/unitify/compare/v10.0.6...v10.0.7
+[10.0.6]: https://github.com/codebeltnet/unitify/compare/v10.0.5...v10.0.6
 [10.0.5]: https://github.com/codebeltnet/unitify/compare/v10.0.4...v10.0.5
 [10.0.4]: https://github.com/codebeltnet/unitify/compare/v10.0.3...v10.0.4
 [10.0.3]: https://github.com/codebeltnet/unitify/compare/v10.0.2...v10.0.3
