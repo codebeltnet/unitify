@@ -1,17 +1,16 @@
-﻿namespace Codebelt.Unitify
+namespace Codebelt.Unitify;
+
+/// <summary>
+/// Specifies ways that a string must be represented in terms of naming style.
+/// </summary>
+public enum NamingStyle
 {
     /// <summary>
-    /// Specifies ways that a string must be represented in terms of naming style.
+    /// Indicates the compound naming style string representation (e.g. 1 Gigabyte / 0.93 Gibibyte).
     /// </summary>
-    public enum NamingStyle
-    {
-        /// <summary>
-        /// Indicates the compound naming style string representation (e.g. 1 Gigabyte / 0.93 Gibibyte).
-        /// </summary>
-        Compound,
-        /// <summary>
-        /// Indicates the symbol naming style string representation (e.g. 1 GB / 0.93 GiB).
-        /// </summary>
-        Symbol
-    }
+    Compound,
+    /// <summary>
+    /// Indicates the symbol naming style string representation (e.g. 1 GB / 0.93 GiB).
+    /// </summary>
+    Symbol
 }

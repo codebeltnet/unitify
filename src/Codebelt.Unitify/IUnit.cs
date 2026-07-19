@@ -1,22 +1,19 @@
-﻿using System;
+namespace Codebelt.Unitify;
 
-namespace Codebelt.Unitify
+/// <summary>
+/// Defines a unit of measure that is used as a standard for measurement of the same kind of quantity.
+/// </summary>
+public interface IUnit : IBaseUnit
 {
     /// <summary>
-    /// Defines a unit of measure that is used as a standard for measurement of the same kind of quantity.
+    /// Gets the base value of the unit.
     /// </summary>
-    public interface IUnit : IBaseUnit
-    {
-        /// <summary>
-        /// Gets the base value of the unit.
-        /// </summary>
-        /// <value>The base value of the unit.</value>
-        double Value { get; }
+    /// <value>The base value of the unit.</value>
+    double Value { get; }
 
-        /// <summary>
-        /// Gets the format options of the unit.
-        /// </summary>
-        /// <value>The format options of the unit.</value>
-        UnitFormatOptions FormatOptions { get; }
-    }
+    /// <summary>
+    /// Gets the format options of the unit.
+    /// </summary>
+    /// <value>The format options of the unit.</value>
+    UnitFormatOptions FormatOptions { get; }
 }
