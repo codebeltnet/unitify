@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Codebelt.Unitify
@@ -78,9 +78,9 @@ namespace Codebelt.Unitify
         public static DecimalPrefix Femto => new("femto", "f", -15);
 
         /// <summary>
-        /// Gets the decimal-submultiple prefix pico (symbol 'f'), 10^-12 = 0.000000000001.
+        /// Gets the decimal-submultiple prefix pico (symbol 'p'), 10^-12 = 0.000000000001.
         /// </summary>
-        /// <value>The decimal-submultiple prefix pico (symbol 'f').</value>
+        /// <value>The decimal-submultiple prefix pico (symbol 'p').</value>
         public static DecimalPrefix Pico => new("pico", "p", -12);
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace Codebelt.Unitify
         public static DecimalPrefix Micro => new("micro", "μ", -6);
 
         /// <summary>
-        /// Gets the decimal-submultiple prefix milli (symbol 'μ'), 10^-3 = 0.001.
+        /// Gets the decimal-submultiple prefix milli (symbol 'm'), 10^-3 = 0.001.
         /// </summary>
-        /// <value>The decimal-submultiple prefix milli (symbol 'μ').</value>
+        /// <value>The decimal-submultiple prefix milli (symbol 'm').</value>
         public static DecimalPrefix Milli => new("milli", "m", -3);
 
         /// <summary>

@@ -6,11 +6,11 @@
     public enum NamingStyle
     {
         /// <summary>
-        /// Indicates the compound naming style string representation (eg. 1 Gigabyte / 0.93 Gibibyte).
+        /// Indicates the compound naming style string representation (e.g. 1 Gigabyte / 0.93 Gibibyte).
         /// </summary>
         Compound,
         /// <summary>
-        /// Indicates the symbol naming style string representation (eg. 1 GB / 0.93 GiB).
+        /// Indicates the symbol naming style string representation (e.g. 1 GB / 0.93 GiB).
         /// </summary>
         Symbol
     }
