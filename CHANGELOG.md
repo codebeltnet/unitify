@@ -7,9 +7,29 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
-## [10.0.10] - 2026-07-18
+## [10.0.10] - 2026-07-20
 
-This is a service update that focuses on package dependencies.
+This is a patch release focused on dependency upgrades, code formatting standardization,
+documentation improvements, and infrastructure refinements.
+
+### Added
+
+- Editor configuration file (`.editorconfig`) establishing shared UTF-8 encoding, line ending consistency,
+  and code analysis rule customizations across the repository.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded from 11.1.1 to 11.1.2,
+- Cuemon.Core upgraded from 10.5.4 to 10.5.5,
+- Microsoft.NET.Test.Sdk upgraded from 18.7.0 to 18.8.1,
+- All 25 source files in `src/Codebelt.Unitify/` converted to file-scoped namespace declarations per IDE0161 analyzer recommendation,
+- All 16 test files in `test/Codebelt.Unitify/` converted to file-scoped namespace declarations for standardization,
+- DocFX container nginx base image refined from 1.31.2-alpine to 1.31-alpine for improved container compatibility.
+
+### Fixed
+
+- XML documentation symbol references in DecimalPrefix class corrected (pico: 'f' → 'p', milli: 'μ' → 'm'),
+- Abbreviation style standardized from 'eg.' to 'e.g.' in NamingStyle and PrefixStyle enums.
 
 ## [10.0.9] - 2026-06-30
 
@@ -176,7 +196,8 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
-[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.9...HEAD
+[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.10...HEAD
+[10.0.10]: https://github.com/codebeltnet/unitify/compare/v10.0.9...v10.0.10
 [10.0.9]: https://github.com/codebeltnet/unitify/compare/v10.0.8...v10.0.9
 [10.0.8]: https://github.com/codebeltnet/unitify/compare/v10.0.7...v10.0.8
 [10.0.7]: https://github.com/codebeltnet/unitify/compare/v10.0.6...v10.0.7
