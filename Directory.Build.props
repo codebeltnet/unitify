@@ -36,6 +36,8 @@
     <SignAssembly Condition="('$(CI)' == 'true' OR '$(IsMainAuthor)' == 'true') AND '$(SkipSignAssembly)' == 'false'">true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)unitify.snk</AssemblyOriginatorKeyFile>
     <NoWarn>7035,CA2260</NoWarn>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(NuGetPackageRoot)' != ''">

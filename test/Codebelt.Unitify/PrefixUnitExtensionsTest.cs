@@ -2,133 +2,132 @@ using System;
 using Codebelt.Extensions.Xunit;
 using Xunit;
 
-namespace Codebelt.Unitify
+namespace Codebelt.Unitify;
+
+public class PrefixUnitExtensionsTest : Test
 {
-    public class PrefixUnitExtensionsTest : Test
+    public PrefixUnitExtensionsTest(ITestOutputHelper output) : base(output)
     {
-        public PrefixUnitExtensionsTest(ITestOutputHelper output) : base(output)
-        {
-        }
+    }
 
-        private class TestPrefix : IPrefix
-        {
-            public string Name { get; set; }
-            public string Symbol { get; set; }
-            public double Multiplier { get; set; }
-            public double Base { get; set; }
-            public double Exponent { get; set; }
+    private class TestPrefix : IPrefix
+    {
+        public string Name { get; set; }
+        public string Symbol { get; set; }
+        public double Multiplier { get; set; }
+        public double Base { get; set; }
+        public double Exponent { get; set; }
 
-            public double ToPrefixValue(double baseValue) => baseValue * Multiplier;
-            public double ToBaseValue(double prefixValue) => prefixValue / Multiplier;
-        }
+        public double ToPrefixValue(double baseValue) => baseValue * Multiplier;
+        public double ToBaseValue(double prefixValue) => prefixValue / Multiplier;
+    }
 
-        private class TestPrefixUnit : IPrefixUnit
-        {
-            public double Value { get; set; }
-            public IPrefix Prefix { get; set; }
-            public string Category { get; set; }
-            public string Name { get; set; }
-            public string Symbol { get; set; }
-            public UnitFormatOptions FormatOptions { get; set; }
-        }
+    private class TestPrefixUnit : IPrefixUnit
+    {
+        public double Value { get; set; }
+        public IPrefix Prefix { get; set; }
+        public string Category { get; set; }
+        public string Name { get; set; }
+        public string Symbol { get; set; }
+        public UnitFormatOptions FormatOptions { get; set; }
+    }
 
-        [Fact]
-        public void ToPrefixValue_ShouldConvertToPrefixValue()
-        {
-            var prefix = new TestPrefix { Multiplier = 1000 };
-            var unit = new TestPrefixUnit { Value = 1, Prefix = prefix };
+    [Fact]
+    public void ToPrefixValue_ShouldConvertToPrefixValue()
+    {
+        var prefix = new TestPrefix { Multiplier = 1000 };
+        var unit = new TestPrefixUnit { Value = 1, Prefix = prefix };
 
-            var result = unit.ToPrefixValue();
+        var result = unit.ToPrefixValue();
 
-            Assert.Equal(1000, result);
-        }
+        Assert.Equal(1000, result);
+    }
 
-        [Fact]
-        public void ToBaseValue_ShouldConvertToBaseValue()
-        {
-            var prefix = new TestPrefix { Multiplier = 1000 };
-            var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
+    [Fact]
+    public void ToBaseValue_ShouldConvertToBaseValue()
+    {
+        var prefix = new TestPrefix { Multiplier = 1000 };
+        var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
 
-            var result = unit.ToBaseValue();
+        var result = unit.ToBaseValue();
 
-            Assert.Equal(1, result);
-        }
+        Assert.Equal(1, result);
+    }
 
-        [Fact]
-        public void ToBaseUnit_ShouldConvertToBaseUnit()
-        {
-            var prefix = new TestPrefix { Multiplier = 1000 };
-            var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
+    [Fact]
+    public void ToBaseUnit_ShouldConvertToBaseUnit()
+    {
+        var prefix = new TestPrefix { Multiplier = 1000 };
+        var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
 
-            var result = unit.ToBaseUnit();
+        var result = unit.ToBaseUnit();
 
-            Assert.Equal(1, result.Value);
-            Assert.Equal(unit.Category, result.Category);
-            Assert.Equal(unit.Name, result.Name);
-            Assert.Equal(unit.Symbol, result.Symbol);
-        }
+        Assert.Equal(1, result.Value);
+        Assert.Equal(unit.Category, result.Category);
+        Assert.Equal(unit.Name, result.Name);
+        Assert.Equal(unit.Symbol, result.Symbol);
+    }
 
-        [Fact]
-        public void ToPrefixString_ShouldConvertToPrefixString()
-        {
-            var prefix = new TestPrefix { Base = 10, Multiplier = 1000 };
-            var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
+    [Fact]
+    public void ToPrefixString_ShouldConvertToPrefixString()
+    {
+        var prefix = new TestPrefix { Base = 10, Multiplier = 1000 };
+        var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
 
-            var result = unit.ToPrefixString();
+        var result = unit.ToPrefixString();
 
-            Assert.NotNull(result);
-        }
+        Assert.NotNull(result);
+    }
 
-        [Fact]
-        public void ToPrefixString_ShouldThrowArgumentOutOfRangeException()
-        {
-            var prefix = new TestPrefix { Base = 5 };
-            var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
+    [Fact]
+    public void ToPrefixString_ShouldThrowArgumentOutOfRangeException()
+    {
+        var prefix = new TestPrefix { Base = 5 };
+        var unit = new TestPrefixUnit { Value = 1000, Prefix = prefix };
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => unit.ToPrefixString());
-        }
+        Assert.Throws<ArgumentOutOfRangeException>(() => unit.ToPrefixString());
+    }
 
-        [Fact]
-        public void ToPrefixString_ShouldConvertToBinaryPrefixString()
-        {
-            var unit = UnitFactory.CreateByte(1, BinaryPrefix.Gibi);
-            var result = unit.ToPrefixString();
+    [Fact]
+    public void ToPrefixString_ShouldConvertToBinaryPrefixString()
+    {
+        var unit = UnitFactory.CreateByte(1, BinaryPrefix.Gibi);
+        var result = unit.ToPrefixString();
 
-            TestOutput.WriteLine(result);
-            Assert.NotNull(result);
-            Assert.Contains("GiB", result);
-        }
+        TestOutput.WriteLine(result);
+        Assert.NotNull(result);
+        Assert.Contains("GiB", result);
+    }
 
-        [Fact]
-        public void ToPrefixString_ShouldReturnUnitToString_WhenPrefixBaseIsZero()
-        {
-            var prefix = new TestPrefix { Base = 0 };
-            var unit = new TestPrefixUnit { Value = 42, Prefix = prefix, Symbol = "m", FormatOptions = new UnitFormatOptions() };
+    [Fact]
+    public void ToPrefixString_ShouldReturnUnitToString_WhenPrefixBaseIsZero()
+    {
+        var prefix = new TestPrefix { Base = 0 };
+        var unit = new TestPrefixUnit { Value = 42, Prefix = prefix, Symbol = "m", FormatOptions = new UnitFormatOptions() };
 
-            var result = unit.ToPrefixString();
+        var result = unit.ToPrefixString();
 
-            TestOutput.WriteLine(result);
-            Assert.NotNull(result);
-        }
+        TestOutput.WriteLine(result);
+        Assert.NotNull(result);
+    }
 
-        [Fact]
-        public void ToMetricPrefixTable_ShouldReturnMetricPrefixTable()
-        {
-            var unit = UnitFactory.CreateWatt(1000);
-            var result = unit.ToMetricPrefixTable();
+    [Fact]
+    public void ToMetricPrefixTable_ShouldReturnMetricPrefixTable()
+    {
+        var unit = UnitFactory.CreateWatt(1000);
+        var result = unit.ToMetricPrefixTable();
 
-            Assert.NotNull(result);
-            Assert.IsType<MetricPrefixTable>(result);
-        }
+        Assert.NotNull(result);
+        Assert.IsType<MetricPrefixTable>(result);
+    }
 
-        [Fact]
-        public void ToDataPrefixTable_ShouldReturnDataPrefixTable()
-        {
-            var unit = UnitFactory.CreateByte(1024);
-            var result = unit.ToDataPrefixTable();
+    [Fact]
+    public void ToDataPrefixTable_ShouldReturnDataPrefixTable()
+    {
+        var unit = UnitFactory.CreateByte(1024);
+        var result = unit.ToDataPrefixTable();
 
-            Assert.NotNull(result);
-            Assert.IsType<DataPrefixTable>(result);
-        }
+        Assert.NotNull(result);
+        Assert.IsType<DataPrefixTable>(result);
     }
 }
