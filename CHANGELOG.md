@@ -7,6 +7,17 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [10.0.11] - 2026-08-16
+
+This is a patch release focused on dependency upgrades, Docker test environment consolidation, and test infrastructure improvements.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded from 11.1.2 to 11.2.1 for enhanced test infrastructure support,
+- Cuemon.Core upgraded from 10.5.5 to 10.7.0 with latest improvements across all supported target frameworks,
+- Microsoft.NET.Test.Sdk upgraded from 18.8.1 to 18.9.0 for improved test runner compatibility,
+- Docker test environment configuration consolidated from separate net9 and net10 runners into a single multi-TFM image supporting .NET 8, 9, 10, and 11, simplifying test matrix management and CI configuration.
+
 ## [10.0.10] - 2026-07-20
 
 This is a patch release focused on dependency upgrades, code formatting standardization,
@@ -196,7 +207,8 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
-[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.10...HEAD
+[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.11...HEAD
+[10.0.11]: https://github.com/codebeltnet/unitify/compare/v10.0.10...v10.0.11
 [10.0.10]: https://github.com/codebeltnet/unitify/compare/v10.0.9...v10.0.10
 [10.0.9]: https://github.com/codebeltnet/unitify/compare/v10.0.8...v10.0.9
 [10.0.8]: https://github.com/codebeltnet/unitify/compare/v10.0.7...v10.0.8
