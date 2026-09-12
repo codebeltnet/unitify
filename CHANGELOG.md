@@ -7,9 +7,31 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
-## [10.0.12] - 2026-09-11
+## [10.0.12] - 2026-09-12
 
-This is a service update that focuses on package dependencies.
+This is a patch release focused on test infrastructure modernization, code coverage tooling modernization,
+build system enhancements, and contribution guidelines alignment with the Codebelt estate.
+
+### Added
+
+- `global.json` configuration for explicit Microsoft.Testing.Platform test runner specification,
+- `.gitattributes` file for consistent line-ending normalization across the repository.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded from 11.2.1 to 12.0.1 for enhanced xUnit v3 and Microsoft.Testing.Platform support,
+- Microsoft.NET.Test.Sdk upgraded from 18.9.0 to 18.10.0 for improved test runner compatibility,
+- Cuemon.Core upgraded from 10.7.0 to 10.7.1 with latest improvements across all supported target frameworks,
+- MinVer upgraded from 7.0.0 to 8.0.0 for semantic versioning enhancements,
+- xunit.v3 upgraded from 3.2.2 to 4.0.0 for major test framework improvements,
+- xunit.v3.runner.console upgraded from 3.2.2 to 4.0.0 for Microsoft.Testing.Platform alignment,
+- xunit.runner.visualstudio upgraded from 3.1.5 to 4.0.0 for Visual Studio integration with the latest test infrastructure,
+- `.editorconfig` cleaned up to remove obsolete analyzer rules (CA1200, IDE0330) and duplicate IDE0036 entry,
+- `.github/CONTRIBUTING.md` completely restructured to align with Codebelt estate guidelines, including clear build instructions, per-project testing procedures, integration environment documentation, and pull request workflow.
+
+### Removed
+
+- coverlet.msbuild and coverlet.collector packages, replaced by Microsoft.Testing.Extensions.CodeCoverage for modern test coverage analysis.
 
 ## [10.0.11] - 2026-08-16
 
@@ -211,7 +233,8 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
-[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.11...HEAD
+[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.12...HEAD
+[10.0.12]: https://github.com/codebeltnet/unitify/compare/v10.0.11...v10.0.12
 [10.0.11]: https://github.com/codebeltnet/unitify/compare/v10.0.10...v10.0.11
 [10.0.10]: https://github.com/codebeltnet/unitify/compare/v10.0.9...v10.0.10
 [10.0.9]: https://github.com/codebeltnet/unitify/compare/v10.0.8...v10.0.9
