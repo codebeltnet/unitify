@@ -7,6 +7,26 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [10.0.13] - 2026-10-17
+
+This is a patch release that updates dependencies, consolidates agent guidance and revises documentation hosting.
+
+### Added
+
+- Added `nginx.conf` for port 8080, immutable caching of fingerprinted public assets and disabled caching and validators for stable documentation URLs.
+
+### Changed
+
+- Updated `Cuemon.Core` from 10.7.1 to 10.8.1,
+- Updated `Codebelt.Extensions.Xunit.App` from 12.0.1 to 12.0.2,
+- Updated `Microsoft.NET.Test.Sdk` from 18.10.0 to 18.11.0,
+- Replaced `Microsoft.Testing.Extensions.CodeCoverage` with `Codebelt.Coverlet.MTP` 10.1.0 and added `Microsoft.Testing.Extensions.HangDump` 2.5.1,
+- Updated `xunit.runner.visualstudio` from 4.0.0 to 4.0.1,
+- Updated `xunit.v3`, `xunit.v3.runner.console` from 4.0.0 to 4.0.2,
+- Consolidated the complete test, benchmark and XML documentation guidance in `AGENTS.md`, preserving examples and path scopes and updating guidance links,
+- Configured DocFX for separate member pages, the `templates/ms-style` template and a monthly sitemap; switched documentation containers to `dhi.io/nginx` and the `codebeltnet/docfx:2` builder,
+- Updated the contributor test command to use Microsoft Testing Platform `--project` syntax.
+
 ## [10.0.12] - 2026-09-12
 
 This is a patch release focused on test infrastructure modernization, code coverage tooling modernization,
@@ -233,7 +253,7 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
-[Unreleased]: https://github.com/codebeltnet/unitify/compare/v10.0.12...HEAD
+[10.0.13]: https://github.com/codebeltnet/unitify/compare/v10.0.12...v10.0.13
 [10.0.12]: https://github.com/codebeltnet/unitify/compare/v10.0.11...v10.0.12
 [10.0.11]: https://github.com/codebeltnet/unitify/compare/v10.0.10...v10.0.11
 [10.0.10]: https://github.com/codebeltnet/unitify/compare/v10.0.9...v10.0.10
