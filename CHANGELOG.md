@@ -7,6 +7,26 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]  
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
+## [11.0.0] - 2026-11-10
+
+This is a major release that adds .NET 11 support and removes .NET 9 support while retaining .NET 10. Existing .NET 9 consumers must remain on 10.x or upgrade their target framework; the public API is unchanged.
+
+### Added
+
+- Added `net11.0` package assets and tests.
+
+### Changed
+
+- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1,
+- Enabled preview SDK provisioning for build, pack, tests, SonarCloud and CodeQL without changing the OS and architecture matrix,
+- Added the .NET 11 preview SDK to the DocFX build container while retaining .NET 10 metadata extraction,
+- Aligned current documentation and package availability with .NET 11 and .NET 10,
+- Updated service-update automation to reuse a pending major release, preserve its package notes without duplicate version blocks, and rewrite package configuration explicitly as UTF-8.
+
+### Removed
+
+- Removed `net9.0` package assets and tests; .NET 10 remains supported.
+
 ## [10.0.13] - 2026-10-17
 
 This is a patch release that updates dependencies, consolidates agent guidance and revises documentation hosting.
@@ -253,6 +273,7 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
+[11.0.0]: https://github.com/codebeltnet/unitify/compare/v10.0.13...v11.0.0
 [10.0.13]: https://github.com/codebeltnet/unitify/compare/v10.0.12...v10.0.13
 [10.0.12]: https://github.com/codebeltnet/unitify/compare/v10.0.11...v10.0.12
 [10.0.11]: https://github.com/codebeltnet/unitify/compare/v10.0.10...v10.0.11
