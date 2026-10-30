@@ -4,7 +4,7 @@ This document provides guidance for AI agents working in this repository.
 
 ## Project Overview
 
-Codebelt.Unitify is an open-source MIT-licensed .NET library that simplifies unit management with comprehensive metric and binary support for prefixes, multiples, and submultiples. It provides types for working with units of measure including SI units (meter, kilogram, second, ampere, kelvin, mole, candela), prefixes (kilo, mega, milli, micro, etc.), and binary prefixes (kibi, mebi, gibi, etc.). The solution targets .NET 10.0 and .NET 9.0.
+Codebelt.Unitify is an open-source MIT-licensed .NET library that simplifies unit management with comprehensive metric and binary support for prefixes, multiples, and submultiples. It provides types for working with units of measure including SI units (meter, kilogram, second, ampere, kelvin, mole, candela), prefixes (kilo, mega, milli, micro, etc.), and binary prefixes (kibi, mebi, gibi, etc.). The solution targets .NET 11.0 and .NET 10.0.
 
 ## Coding Standards
 
