@@ -4,28 +4,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
-> [!NOTE]  
+> [!NOTE]
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
 ## [11.0.0] - 2026-11-10
 
-This is a major release that adds .NET 11 support and removes .NET 9 support while retaining .NET 10. Existing .NET 9 consumers must remain on 10.x or upgrade their target framework; the public API is unchanged.
+This is a major release that adds .NET 11 and removes .NET 9 while retaining .NET 10. It also updates dependencies, test infrastructure, and documentation asset caching.
 
 ### Added
 
-- Added `net11.0` package assets and tests.
+- .NET 11 package assets and tests,
+- `SonarAnalyzer.CSharp` 10.35.0.4138 for library projects.
 
 ### Changed
 
-- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1,
-- Enabled preview SDK provisioning for build, pack, tests, SonarCloud and CodeQL without changing the OS and architecture matrix,
-- Added the .NET 11 preview SDK to the DocFX build container while retaining .NET 10 metadata extraction,
-- Aligned current documentation and package availability with .NET 11 and .NET 10,
-- Updated service-update automation to reuse a pending major release, preserve its package notes without duplicate version blocks, and rewrite package configuration explicitly as UTF-8.
+- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1, `Cuemon.Core` from 10.8.1 to 10.8.2, and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
+- Enabled preview SDK provisioning in CI, moved Linux CI runners to Ubuntu 26.04, and split Docker test environments by .NET 10 and .NET 11,
+- Updated documentation and package availability for .NET 11 and .NET 10,
+- Service-update automation preserves pending releases and package note blocks, validates release dates, and reads and writes package configuration as UTF-8,
+- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges.
 
 ### Removed
 
-- Removed `net9.0` package assets and tests; .NET 10 remains supported.
+- .NET 9 package assets and tests; consumers must target .NET 10 or later,
+- The repository's benchmark prompt.
 
 ## [10.0.13] - 2026-10-17
 
