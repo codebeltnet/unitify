@@ -7,26 +7,29 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 > [!NOTE]
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
 
-## [11.0.0] - 2026-11-10
+## [11.0.0] - 2026-11-12
 
-This is a major release that adds .NET 11 and removes .NET 9 while retaining .NET 10. It also updates dependencies, test infrastructure, and documentation asset caching.
+This is a major release that adds .NET 11 support and removes .NET 9 support while retaining .NET 10. It also updates dependencies, test infrastructure, release automation, and documentation hosting.
 
 ### Added
 
 - .NET 11 package assets and tests,
-- `SonarAnalyzer.CSharp` 10.35.0.4138 for library projects.
+- `SonarAnalyzer.CSharp` 10.36.0.15337 for library projects.
 
 ### Changed
 
-- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1, `Cuemon.Core` from 10.8.1 to 10.8.2, and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
-- Enabled preview SDK provisioning in CI, moved Linux CI runners to Ubuntu 26.04, and split Docker test environments by .NET 10 and .NET 11,
+- Updated `Cuemon.Core` from 10.8.1 to 11.0.0,
+- Updated test dependencies: `Codebelt.Coverlet.MTP` from 10.1.0 to 11.0.0, `Codebelt.Extensions.Xunit.App` from 12.0.2 to 13.0.0, `Microsoft.NET.Test.Sdk` from 18.11.0 to 18.12.0, `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.3, and `xunit.v3` and `xunit.v3.runner.console` from 4.0.2 to 4.0.3,
+- Moved Linux CI runners and the WSL test environment to Ubuntu 26.04 and split Docker test environments into .NET 10 and .NET 11 images,
 - Updated documentation and package availability for .NET 11 and .NET 10,
-- Service-update automation preserves pending releases and package note blocks, validates release dates, and reads and writes package configuration as UTF-8,
-- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges.
+- Service-update automation reuses pending releases, preserves existing package note blocks, validates release dates, and reads and writes package configuration as UTF-8,
+- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges,
+- Enforced file-scoped C# namespaces and LF line endings in repository configuration,
+- Pinned Scorecard workflow actions to commit hashes.
 
 ### Removed
 
-- .NET 9 package assets and tests; consumers must target .NET 10 or later,
+- .NET 9 package assets and tests; consumers targeting .NET 9 must target .NET 10 or later to use this release,
 - The repository's benchmark prompt.
 
 ## [10.0.13] - 2026-10-17
