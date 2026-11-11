@@ -114,7 +114,7 @@ def main():
     print()
 
     try:
-        with open("Directory.Packages.props", "r") as f:
+        with open("Directory.Packages.props", "r", encoding="utf-8") as f:
             content = f.read()
     except FileNotFoundError:
         print("Error: Directory.Packages.props not found")
@@ -171,7 +171,7 @@ def main():
         if len(skipped_third_party) > 5:
             print(f"  ... and {len(skipped_third_party) - 5} more")
 
-    with open("Directory.Packages.props", "w") as f:
+    with open("Directory.Packages.props", "w", encoding="utf-8") as f:
         f.write(new_content)
 
     return 0 if changes else 0  # Return 0 even if no changes (not an error)

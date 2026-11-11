@@ -4,8 +4,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
-> [!NOTE]  
+> [!NOTE]
 > Changelog entries prior to version 9.0.0 was migrated from previous versions of [Cuemon.Core](https://github.com/gimlichael/Cuemon/commit/83e0c7af2cdaa07351e878fa7276558838f2e7e6).
+
+## [11.0.0] - 2026-11-12
+
+This is a major release that adds .NET 11 support and removes .NET 9 support while retaining .NET 10. It also updates dependencies, test infrastructure, release automation, and documentation hosting.
+
+### Added
+
+- .NET 11 package assets and tests,
+- `SonarAnalyzer.CSharp` 10.36.0.15337 for library projects.
+
+### Changed
+
+- Updated `Cuemon.Core` from 10.8.1 to 11.0.0,
+- Updated test dependencies: `Codebelt.Coverlet.MTP` from 10.1.0 to 11.0.0, `Codebelt.Extensions.Xunit.App` from 12.0.2 to 13.0.0, `Microsoft.NET.Test.Sdk` from 18.11.0 to 18.12.0, `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.3, and `xunit.v3` and `xunit.v3.runner.console` from 4.0.2 to 4.0.3,
+- Moved Linux CI runners and the WSL test environment to Ubuntu 26.04 and split Docker test environments into .NET 10 and .NET 11 images,
+- Updated documentation and package availability for .NET 11 and .NET 10,
+- Service-update automation reuses pending releases, preserves existing package note blocks, validates release dates, and reads and writes package configuration as UTF-8,
+- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges,
+- Enforced file-scoped C# namespaces and LF line endings in repository configuration,
+- Pinned Scorecard workflow actions to commit hashes.
+
+### Removed
+
+- .NET 9 package assets and tests; consumers targeting .NET 9 must target .NET 10 or later to use this release,
+- The repository's benchmark prompt.
 
 ## [10.0.13] - 2026-10-17
 
@@ -253,6 +278,7 @@ This is a service update that primarily focuses on package dependencies and mino
 - ByteUnit class in the Codebelt.Unitify namespace to have 0 duplicated blocks of lines of code
 - UnitPrefixFormatter class in the Codebelt.Unitify namespace to be compliant with https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
 
+[11.0.0]: https://github.com/codebeltnet/unitify/compare/v10.0.13...v11.0.0
 [10.0.13]: https://github.com/codebeltnet/unitify/compare/v10.0.12...v10.0.13
 [10.0.12]: https://github.com/codebeltnet/unitify/compare/v10.0.11...v10.0.12
 [10.0.11]: https://github.com/codebeltnet/unitify/compare/v10.0.10...v10.0.11
